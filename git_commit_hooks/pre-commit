@@ -2,9 +2,9 @@
 
 EXIT_PHPCS_NO_BIN=1
 EXIT_PHPCS_ERROR=2
-EXIT_JSHINT_NO_BIN=3
-EXIT_JSHINT_ERROR=4
-EXIT_ERROR=254
+EXIT_PHP_LINT_ERROR=3
+EXIT_JSHINT_NO_BIN=4
+EXIT_JSHINT_ERROR=5
 
 function pre_exit {
   #-- Restore our stashed files
@@ -34,6 +34,25 @@ function check_phpcs {
     echo "phpcs returned: $ret"
     if [ 0 -ne $ret ]; then
       error "You have PHP errors!" $EXIT_PHPCS_ERROR
+    fi
+  fi
+}
+
+
+function check_phplint {
+  local ret=0
+  PHP_FILES="`echo -e \"${FILES_MODIFIED}\n${FILES_ADDED}\" | grep '\.php$'`"
+  if [ -n "$PHP_FILES" ]; then
+
+    echo -e "== Running php -l on the following files:\n$PHP_FILES\n"
+    for f in $PHP_FILES; do
+      php -l $f | grep -v 'No syntax errors detected in'
+      if [ 0 -eq $? ]; then
+        ret=1
+      fi
+    done
+    if [ 0 -ne $ret ]; then
+      error "You have PHP syntax errors!" $EXIT_PHP_LINT_ERROR
     fi
   fi
 }
@@ -71,6 +90,7 @@ FILES_MODIFIED="`git diff --cached --name-only --diff-filter=A`"
 FILES_DELETED="`git diff --cached --name-only --diff-filter=D`"
 
 check_phpcs
+check_phplint
 check_jshint
 
 pre_exit
