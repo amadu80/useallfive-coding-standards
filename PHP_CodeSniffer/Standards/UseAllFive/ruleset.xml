@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ruleset name="UseAllFive">
+ <description>Use All Five's PSR-2 coding standard.</description>
+
+ <rule ref="Generic.CodeAnalysis.VariableAnalysis"/>
+ <rule ref="PSR2">
+   <!--
+   <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace" />
+   -->
+ </rule>
+
+</ruleset>
