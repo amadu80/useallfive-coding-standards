@@ -212,7 +212,7 @@ function php_codesniffer_install {
   fi
   if [ 0 -eq $ret ]; then
     cd PHP_Codesniffer-VariableAnalysis
-    ./install.sh -d "$(pear_get_dir)/PHP/CodeSniffer"
+    ./install.sh -d "$(pear_get_dir)/share/pear/PHP/CodeSniffer"
     if [ 0 -ne $? ]; then
       error "Could not install 'PHP_Codesniffer-VariableAnalysis'. Exiting" $EXIT_PHPCS_ERR
     fi
@@ -225,7 +225,7 @@ function php_codesniffer_install {
   #-- Install the UseAllFive
   progress "Installing UseAllFive Ruleset"
   git clone https://github.com/UseAllFive/useallfive-coding-standards.git
-  local cs_dir="`find $(pear_get_dir) -type d -name CodeSniffer`"
+  local cs_dir="`find $(pear_get_dir) -type d -name CodeSniffer | grep 'PHP/CodeSniffer'`"
   cp -r "useallfive-coding-standards/PHP_CodeSniffer/Standards/UseAllFive" "${cs_dir}/Standards"
   rm -rf "useallfive-coding-standards"
 }
