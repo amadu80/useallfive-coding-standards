@@ -29,7 +29,7 @@ function check_phpcs {
     fi
 
     echo -e "== Running PHP_CodeSniffer on the following files:\n$PHP_FILES\n"
-    phpcs "$PHP_FILES"
+    phpcs --standard=UseAllFive "$PHP_FILES"
     ret=$?
     echo "phpcs returned: $ret"
     if [ 0 -ne $ret ]; then
