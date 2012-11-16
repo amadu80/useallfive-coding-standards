@@ -4,9 +4,6 @@
 
  <rule ref="Generic.CodeAnalysis.VariableAnalysis"/>
  <rule ref="PSR2">
-   <!--
-   <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace" />
-   -->
  </rule>
 
 </ruleset>

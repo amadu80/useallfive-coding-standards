@@ -226,7 +226,7 @@ function php_codesniffer_install {
   progress "Installing UseAllFive Ruleset"
   git clone https://github.com/UseAllFive/useallfive-coding-standards.git
   local cs_dir="`find $(pear_get_dir) -type d -name CodeSniffer | grep 'PHP/CodeSniffer'`"
-  cp -r "useallfive-coding-standards/PHP_CodeSniffer/Standards/UseAllFive" "${cs_dir}/Standards"
+  cp -r useallfive-coding-standards/PHP_CodeSniffer/Standards/* "${cs_dir}/Standards/"
   rm -rf "useallfive-coding-standards"
 }
 
