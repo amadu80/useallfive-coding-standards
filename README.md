@@ -2,7 +2,7 @@
 
 This is a simple bash script to help install UseAllFive's coding standard rules and the dependencies needed to apply these rules in a Git Pre-commit hook.
 
-## [Prerequisites](https://github.com/ner0tic/useallfive-coding-standards/blob/master/doc/01-prequisites.md)
+## [Prerequisites](https://github.com/ner0tic/useallfive-coding-standards/blob/master/doc/01-prerequisites.md)
 While this script tries to install as many of the dependencies as possible, there are a few that it can not handle on its own and need to be handled externally.  
 
 ## Usage
