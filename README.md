@@ -1,17 +1,25 @@
-How to install the pre-commit hook.
-====================================
+## UseAllFive Coding Standards
 
-Copy the pre-commit hook into the .git/hooks folder of your local git
-repository. You can do this by hand or by calling
-./install_hooks.sh /path/to/repository
+This is a simple bash script to help install UseAllFive's coding standard rules and the dependencies needed to apply these rules in a Git Pre-commit hook.
 
-The script will ask if any existing files are to be overwritten.
-Note that the existing pre-commit hook has to be overwritten.
-You can rename it and add it to the list of executed hooks in the
-pre-commit file included with these scripts to have it executed as
-before.
+## [Dependencies](doc/01-dependencies.md)
+While this script tries to install as many of the dependencies as possible, there are a few that it can not handle on its own and need to be handled externally.  
 
-Some of the pre-commit hooks have settings that need to be specified.
-They should be self-explanatory and are located at the top of the
-respective file. If a hook fails because of invalid settings it will
-report it and abort the commmit.
+## Usage
+
+To install all dependencies and the git pre-commit hook, simply run the following replacing `/path/to/repository` with your own:
+```bash
+sudo ./install_hooks.sh /path/to/repository
+```
+
+### [Configuration Files](docs/03-configuration-files.md)
+These files can be copied into your project's root directory to configure the related tools to use these defaults.
+
+### [PHP_CodeSniffer](http://pear.php.net/package/PHP_CodeSniffer) 
+Tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.  Successful installation of this package depends on PEAR being installed.
+
+### [JSHint](http://jshint.com/) 
+A community-driven tool to detect errors and potential problems in JavaScript code and to enforce your team's coding conventions. It is controlled by a `.jshintrc` file in your project's root directory.  Successful installation of this depends on node.js and npm being installed.
+
+### [Git Commit hook](doc/02-pre-commit-hook.md)
+This is a custom git pre-commit hook that depends on the above packages.  This command must be run from the root directory of the git repository you wish to install it to, and will abort if an existing pre-commit hook is present.
