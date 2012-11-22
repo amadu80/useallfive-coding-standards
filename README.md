@@ -21,5 +21,5 @@ Tokenizes PHP, JavaScript and CSS files and detects violations of a defined set 
 ### [JSHint](http://jshint.com/) 
 A community-driven tool to detect errors and potential problems in JavaScript code and to enforce your team's coding conventions. It is controlled by a `.jshintrc` file in your project's root directory.  Successful installation of this depends on node.js and npm being installed.
 
-### [Git Commit hook](https://github.com/ner0tic/useallfive-coding-standards/blob/master/doc/02-pre-commit-hook.md)
+### [Git Commit hook](https://github.com/ner0tic/useallfive-coding-standards/blob/master/doc/02-pre-commit.md)
 This is a custom git pre-commit hook that depends on the above packages.  This command must be run from the root directory of the git repository you wish to install it to, and will abort if an existing pre-commit hook is present.
