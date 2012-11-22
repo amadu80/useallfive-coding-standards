@@ -12,7 +12,7 @@
         },
         {
             "name":     "Matthew Farmer",
-            "email":    "m14t@mattfarmer.net",
+            "email":    "matt@mattfarmer.net",
 	    "homepage": "http://mattfarmer.net"
         },
         {
@@ -21,10 +21,25 @@
             "homepage": "http://daviddurost.net"
         }
     ],
+    "repositories": [
+	{
+            "type": "package",
+            "package": {
+                "name" : "jshint/jshint",
+                "version" : "master",
+                "source" : {
+                    "url" : "https://github.com/jshint/jshint.git",
+                    "type" : "git",
+                    "reference" : "master"
+                }
+            }
+        }
+	    
     "require":      {
         "php":  ">=5.3.0",
-	"nick4fake/jsmin": "dev-master",
-	"ner0tic/php_codesniffer": "dev-master"
+	"ner0tic/jshint": "dev-master",
+	"ner0tic/php_codesniffer": "dev-master",
+	"jshint/jshint": master
     },
     "require-dev":  {
     },
