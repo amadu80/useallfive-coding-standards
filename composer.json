@@ -12,12 +12,12 @@
         },
         {
             "name":     "Matthew Farmer",
-            "email":    "m14t@mattfarmer.net"
+            "email":    "m14t@mattfarmer.net",
 	    "homepage": "http://mattfarmer.net"
         },
         {
             "name":     "David Durost",
-	    "email":    "david.durost@gmail.com"
+	    "email":    "david.durost@gmail.com",
             "homepage": "http://daviddurost.net"
         }
     ],
