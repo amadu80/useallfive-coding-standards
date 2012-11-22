@@ -34,10 +34,9 @@
                 }
             }
         }
-	    
+    ]	    
     "require":      {
         "php":  ">=5.3.0",
-	"ner0tic/jshint": "dev-master",
 	"ner0tic/php_codesniffer": "dev-master",
 	"jshint/jshint": master
     },
